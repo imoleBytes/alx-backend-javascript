@@ -8,7 +8,7 @@ export default function cleanSet(set, startString) {
       newStr += val.slice(startString.length) + '-';
     }
   });
-  newStr = newStr.slice(0, newStr.length - 1);
+  if (newStr[newStr.length - 1] === '-') newStr = newStr.slice(0, newStr.length - 1);
 
   return newStr;
 }
