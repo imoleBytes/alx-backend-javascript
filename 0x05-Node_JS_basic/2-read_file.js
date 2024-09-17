@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-function countallStudents(path) {
+function countStudents(path) {
   const allStudents = {};
   const fields = {};
   let length = 0;
@@ -27,12 +27,11 @@ function countallStudents(path) {
     console.log(`Number of allStudents: ${l}`);
     for (const [key, value] of Object.entries(fields)) {
       if (key !== 'field') {
-        console.log(`Number of allStudents in ${key}: ${value}. List: ${allStudents[key].join(', ')}`);
+        console.log(`Number of students in ${key}: ${value}. List: ${allStudents[key].join(', ')}`);
       }
     }
   } catch (error) {
     throw Error('Cannot load the database');
   }
 }
-
-module.exports = countallStudents;
+module.exports = countStudents;
